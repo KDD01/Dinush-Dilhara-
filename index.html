@@ -79,6 +79,15 @@
         }
         @keyframes shine { to { background-position: 200% center; } }
 
+        /* --- Typing Effect Cursor --- */
+        .typing-text::after {
+            content: '|';
+            animation: blink 0.8s infinite;
+            color: var(--primary);
+            margin-left: 5px;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+
         .btn-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
         .btn-morph {
             padding: 15px 35px; border: 1px solid var(--primary); color: #fff;
@@ -232,7 +241,7 @@
 
     <section class="hero" id="home">
         <h1 class="shine-text" data-aos="zoom-in">DINUSH DILHARA</h1>
-        <p style="font-family: 'Exo 2'; letter-spacing: 8px; color: #888; font-weight: 300;">AI ARCHITECT | TECH ENTREPRENEUR</p>
+        <p id="typing" class="typing-text" style="font-family: 'Exo 2'; letter-spacing: 8px; color: #888; font-weight: 300; min-height: 1.2em;"></p>
         <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
             <a href="https://github.com/KDD01" class="btn-morph" target="_blank"><i class="fab fa-github"></i> GITHUB ACCESS</a>
             <a href="#contact" class="btn-morph"><i class="fas fa-paper-plane"></i> HIRE ME</a>
@@ -339,6 +348,22 @@
                 alert("Copied to clipboard: " + text);
             });
         }
+
+        // --- Typing Effect Script ---
+        const text = "AI ARCHITECT | TECH ENTREPRENEUR";
+        const speed = 100; // ටයිප් වන වේගය (ms)
+        let i = 0;
+
+        function typeEffect() {
+            if (i < text.length) {
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeEffect, speed);
+            }
+        }
+        
+        // පේජ් එක ලෝඩ් වුණාම ආරම්භ කරන්න
+        window.onload = typeEffect;
     </script>
 </body>
 </html>
