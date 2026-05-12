@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Dinush Dilhara</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Exo+2:wght@300;600;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --accent: #ffffff;
+            --bg-dark: #020202;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            overflow-x: hidden;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* --- Global Elements --- */
+        .main-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.92)), url('new my png 001.png');
+            background-size: cover; background-position: center;
+            z-index: -2;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1200px;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 50px;
+            border: 1px solid var(--glass-border);
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+        }
+        .logo { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: 2px; }
+        .nav-links { display: flex; list-style: none; gap: 30px; }
+        .nav-links a { text-decoration: none; color: #aaa; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
+
+        .mobile-nav {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: rgba(0,0,0,0.98); z-index: 2000; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; gap: 30px; transition: 0.5s;
+        }
+        .mobile-nav.active { right: 0; }
+        .mobile-nav a { font-size: 2rem; color: #fff; text-decoration: none; font-family: 'Exo 2'; }
+
+        /* --- Hero Section --- */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(3rem, 10vw, 6rem); line-height: 1.1; margin-bottom: 20px; }
+        .shine-text {
+            background: linear-gradient(120deg, #fff, var(--primary), #fff);
+            background-size: 200% auto; -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+
+        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+        .btn-morph {
+            padding: 15px 35px; border: 1px solid var(--primary); color: #fff;
+            text-decoration: none; border-radius: 50px; font-weight: 700;
+            transition: 0.4s; overflow: hidden; display: flex; align-items: center; gap: 10px;
+        }
+        .btn-morph:hover { background: var(--primary); color: #000; box-shadow: 0 0 30px var(--primary); border-radius: 5px; }
+
+        /* --- Stats Bar --- */
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px; padding: 50px 5%; max-width: 1200px; margin: 0 auto;
+        }
+        .stat-card { background: var(--glass); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid var(--glass-border); }
+        .stat-card h2 { color: var(--primary); font-size: 2.5rem; font-family: 'Exo 2'; }
+        .stat-card p { color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+
+        /* --- Image Swap Shine Effect --- */
+        .image-container { 
+            position: relative; 
+            border-radius: 30px; 
+            overflow: hidden; 
+            border: 1px solid var(--glass-border); 
+        }
+        .image-container img { width: 100%; display: block; }
+        
+        .image-container::after {
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: -150%; 
+            width: 80%; 
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+            transform: skewX(-25deg); 
+            animation: imageSwipe 5s infinite;
+        }
+        @keyframes imageSwipe { 
+            0% { left: -150%; } 
+            30% { left: 150%; } 
+            100% { left: 150%; } 
+        }
+
+        /* --- Project Showcase --- */
+        .section-header { text-align: center; margin-bottom: 60px; font-family: 'Syncopate'; font-size: 2rem; position: relative; }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 5%; max-width: 1300px; margin: 0 auto; }
+        .premium-card {
+            position: relative; background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+            border-radius: 25px; padding: 40px; border: 1px solid var(--glass-border);
+            overflow: hidden; transition: var(--transition-smooth);
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .premium-card:hover { transform: translateY(-15px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,210,255,0.1); }
+        .project-tag { font-size: 0.6rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; font-weight: 700; }
+        .project-link { margin-top: 25px; text-decoration: none; color: #fff; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+
+        /* --- 💎 SMART ICONIC SKILLS SECTION --- */
+        .skills-orbit {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 25px; padding: 0 5%; max-width: 1200px; margin: 0 auto;
+        }
+        .skill-item-new {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            padding: 30px 15px; border-radius: 24px;
+            text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative; overflow: hidden;
+        }
+        .skill-item-new i {
+            font-size: 2.5rem; color: #fff; margin-bottom: 15px;
+            display: block; transition: 0.4s;
+        }
+        .skill-item-new span {
+            font-family: 'Exo 2'; font-weight: 700; font-size: 0.85rem;
+            text-transform: uppercase; letter-spacing: 1.5px; color: #888;
+        }
+        .skill-item-new:hover {
+            background: rgba(0, 210, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.2);
+        }
+        .skill-item-new:hover i { color: var(--primary); transform: scale(1.2); }
+        .skill-item-new:hover span { color: #fff; }
+
+        /* --- 📱 ATTRACTIVE CONNECT HUB --- */
+        .connect-modern {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; padding: 0 5%; max-width: 1100px; margin: 0 auto;
+        }
+        .connect-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+            border: 1px solid var(--glass-border); border-radius: 30px;
+            padding: 40px; text-align: center; transition: 0.4s;
+            position: relative; overflow: hidden;
+        }
+        .connect-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.08); }
+        .connect-card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 25px; }
+        .connect-card h3 { font-family: 'Syncopate'; font-size: 0.8rem; letter-spacing: 4px; margin-bottom: 15px; color: #fff; }
+        .connect-card p { font-family: 'Space Grotesk'; font-size: 1.1rem; color: #bbb; line-height: 1.6; }
+        
+        .copy-trigger {
+            display: inline-block; margin-top: 20px; padding: 10px 25px;
+            background: var(--primary); color: #000; border-radius: 50px;
+            font-weight: 900; font-size: 0.7rem; letter-spacing: 2px;
+            cursor: pointer; transition: 0.3s; text-transform: uppercase;
+        }
+        .copy-trigger:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary); }
+
+        .centered-footer {
+            text-align: center; padding: 80px 5% 40px;
+        }
+        .loc-text { font-family: 'Exo 2'; font-size: 0.95rem; color: var(--primary); letter-spacing: 4px; margin-bottom: 25px; }
+        .copy-text { font-size: 0.75rem; letter-spacing: 6px; color: #444; margin-bottom: 8px; }
+        .brand-text { font-size: 0.65rem; letter-spacing: 4px; color: #222; font-weight: 700; }
+
+        section { padding: 100px 0; }
+        .company-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; padding: 100px 5%; max-width: 1300px; margin: 0 auto; }
+
+        @media (max-width: 768px) {
+            nav { padding: 10px 25px; } .nav-links { display: none; } .menu-btn { display: block; }
+            .company-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-bg"></div>
+
+    <nav>
+        <div class="logo">PORTFOLIO</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <i class="fas fa-times" style="position: absolute; top: 30px; right: 30px; font-size: 2rem;" onclick="toggleMenu()"></i>
+        <a href="#home" onclick="toggleMenu()">Home</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#skills" onclick="toggleMenu()">Skills</a>
+        <a href="#projects" onclick="toggleMenu()">Work</a>
+        <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <section class="hero" id="home">
+        <h1 class="shine-text" data-aos="zoom-in">DINUSH DILHARA</h1>
+        <p style="font-family: 'Exo 2'; letter-spacing: 8px; color: #888; font-weight: 300;">AI ARCHITECT | TECH ENTREPRENEUR</p>
+        <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://github.com/KDD01" class="btn-morph" target="_blank"><i class="fab fa-github"></i> GITHUB ACCESS</a>
+            <a href="#contact" class="btn-morph"><i class="fas fa-paper-plane"></i> HIRE ME</a>
+        </div>
+    </section>
+
+    <div class="stats-bar" data-aos="fade-up">
+        <div class="stat-card"><h2>15+</h2><p>Projects Done</p></div>
+        <div class="stat-card"><h2>02+</h2><p>Founded Ventures</p></div>
+        <div class="stat-card"><h2>24/7</h2><p>AI Innovation</p></div>
+        <div class="stat-card"><h2>100%</h2><p>Digital Success</p></div>
+    </div>
+
+    <section id="about">
+        <div class="company-grid">
+            <div class="image-container" data-aos="fade-right">
+                <img src="new my png 001.png" alt="Dinush Dilhara">
+            </div>
+            <div data-aos="fade-left">
+                <h2 class="section-header" style="text-align: left; font-size: 1.5rem;">LEADERSHIP & VISION</h2>
+                <div style="background: var(--glass); border-radius: 20px; padding: 30px; margin-bottom: 20px; border-left: 4px solid var(--primary);">
+                    <h3 style="color: var(--primary); font-family: 'Exo 2';">Founder of KDD Studio</h3>
+                    <p style="color: #bbb;">Premium visual identities and cinematic branding solutions.</p>
+                </div>
+                <div style="background: var(--glass); border-radius: 20px; padding: 30px; border-left: 4px solid var(--primary);">
+                    <h3 style="color: var(--primary); font-family: 'Exo 2';">Lead at DS Media Hub</h3>
+                    <p style="color: #bbb;">Innovating digital marketing through AI integration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-header" data-aos="fade-up">FEATURED WORK</h2>
+        <div class="project-grid">
+            <div class="premium-card" data-aos="fade-up">
+                <div>
+                    <div class="project-tag">Artificial Intelligence</div>
+                    <h3 style="font-family: 'Exo 2'; font-size: 1.8rem; margin-bottom: 15px;">DiNuX AI Assistant</h3>
+                    <p style="color: #888; font-size: 0.95rem; line-height: 1.6;">Custom-built LLM powered AI interface utilizing Streamlit and Python for high-performance automation.</p>
+                </div>
+                <a href="#" class="project-link">EXPLORE CODE <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="premium-card" data-aos="fade-up" data-aos-delay="200">
+                <div>
+                    <div class="project-tag">Branding & Ecosystem</div>
+                    <h3 style="font-family: 'Exo 2'; font-size: 1.8rem; margin-bottom: 15px;">KDD Store Branding</h3>
+                    <p style="color: #888; font-size: 0.95rem; line-height: 1.6;">A complete digital ecosystem featuring professional UI/UX, advanced automation, and cinematic visual identity.</p>
+                </div>
+                <a href="#" class="project-link">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-header" data-aos="fade-up">CORE EXPERTISE</h2>
+        <div class="skills-orbit">
+            <div class="skill-item-new" data-aos="zoom-in"><i class="fab fa-python"></i><span>Python</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="50"><i class="fas fa-brain"></i><span>LLM Models</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-rocket"></i><span>Streamlit</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-database"></i><span>SQL DB</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-hashtag"></i><span>C# / Java</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-globe"></i><span>Web Design</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-palette"></i><span>Graphics</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-robot"></i><span>AI Prompting</span></div>
+            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-cloud-upload-alt"></i><span>Cloud Hosting</span></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-header" data-aos="fade-up">CONNECT WITH ME</h2>
+        <div class="connect-modern">
+            <div class="connect-card" data-aos="fade-up">
+                <i class="fab fa-whatsapp"></i>
+                <h3>WHATSAPP</h3>
+                <p>+94 77 995 6510<br>+94 75 990 4894</p>
+                <div class="copy-trigger" onclick="copyText('+94 77 995 6510')">CLICK TO COPY WHATSAPP</div>
+            </div>
+            <div class="connect-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fab fa-youtube"></i>
+                <h3>YOUTUBE</h3>
+                <p>Explore Tech & AI on<br><strong>Dinu Geek Channel</strong></p>
+            </div>
+            <div class="connect-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-facebook-f"></i>
+                <h3>FACEBOOK</h3>
+                <p>Connect personally with<br><strong>Dinu Keraminiyge</strong></p>
+            </div>
+        </div>
+
+        <div class="centered-footer" data-aos="fade-up">
+            <p class="loc-text">Based in Sri Lanka | Available Worldwide</p>
+            <p class="copy-text">© 2026 DINUSH DILHARA</p>
+            <p class="brand-text">KDD STUDIO | DS MEDIA HUB</p>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        function toggleMenu() { document.getElementById('mobileNav').classList.toggle('active'); }
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied to clipboard: " + text);
+            });
+        }
+    </script>
+</body>
+</html>
