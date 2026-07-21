@@ -1,427 +1,1425 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Dinush Dilhara | AI Architect & Tech Entrepreneur</title>
-    <link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Dinush Dilhara",
-      "url": "https://kdd01.github.io/"
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dinush Dilhara | Cyber Architect & AI Entrepreneur</title>
+<link rel="icon" type="image/png" sizes="512x512" href="./favicon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Dinush Dilhara",
+  "url": "https://kdd01.github.io/"
+}
+</script>
+<meta name="description" content="Official portfolio of Dinush Dilhara. Expert in AI, Python, Cyber Security, LLM Models, and Digital Branding. Founder of KDD Studio and DS Media Hub.">
+<meta name="keywords" content="Dinush Dilhara, Dinush Dilhara Sri Lanka, KDD Studio, DS Media Hub, Cyber Architect, AI Architect, Python Developer Sri Lanka">
+<meta name="author" content="Dinush Dilhara">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="google-site-verification" content="C86Ypu77ky-yzu96B7c-me_vGrvORs4DCmv-5UJq6Hk" />
+
+<style>
+    :root {
+        /* ===== Core token system ===== */
+        --void: #05060b;
+        --void-2: #090b13;
+        --panel: rgba(255,255,255,0.035);
+        --panel-strong: rgba(255,255,255,0.065);
+        --border: rgba(255,255,255,0.09);
+        --border-soft: rgba(255,255,255,0.05);
+        --ink: #eef1f7;
+        --ink-dim: #8993a8;
+        --ink-faint: #4b5266;
+
+        /* category / accent system — every module below is color-coded by discipline */
+        --teal: #45e8c4;   /* cyber & security */
+        --teal-glow: rgba(69,232,196,.38);
+        --violet: #b18aff; /* ai & data */
+        --violet-glow: rgba(177,138,255,.35);
+        --amber: #ffb35c;  /* development & ops */
+        --amber-glow: rgba(255,179,92,.35);
+        --rose: #ff6f8e;   /* design & brand */
+        --rose-glow: rgba(255,111,142,.35);
+
+        --primary: var(--teal);
+        --primary-glow: var(--teal-glow);
+
+        --font-display: 'Space Grotesk', sans-serif;
+        --font-body: 'Rajdhani', sans-serif;
+        --font-mono: 'Fira Code', monospace;
+        --ease: cubic-bezier(0.16, 1, 0.3, 1);
     }
-    </script>
-    <meta name="description" content="Official portfolio of Dinush Dilhara. Expert in AI, Python, LLM Models, and Digital Branding. Founder of KDD Studio and DS Media Hub.">
-    <meta name="keywords" content="Dinush Dilhara, Dinush Dilhara Sri Lanka, KDD Studio, DS Media Hub, AI Architect, Python Developer Sri Lanka">
-    <meta name="author" content="Dinush Dilhara">
 
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Exo+2:wght@300;600;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <meta name="google-site-verification" content="C86Ypu77ky-yzu96B7c-me_vGrvORs4DCmv-5UJq6Hk" />
+    [data-theme="violet"] { --primary: var(--violet); --primary-glow: var(--violet-glow); }
+    [data-theme="amber"]  { --primary: var(--amber);  --primary-glow: var(--amber-glow); }
+    [data-theme="rose"]   { --primary: var(--rose);   --primary-glow: var(--rose-glow); }
 
-    <style>
-        :root {
-            --primary: #00d2ff;
-            --accent: #ffffff;
-            --bg-dark: #020202;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    body {
+        background-color: var(--void);
+        color: var(--ink);
+        font-family: var(--font-body);
+        font-size: 17px;
+        overflow-x: hidden;
+        position: relative;
+        cursor: default;
+    }
 
-        body {
-            background-color: var(--bg-dark);
-            color: #fff;
-            overflow-x: hidden;
-            font-family: 'Space Grotesk', sans-serif;
-            position: relative;
-        }
+    ::selection { background: var(--primary); color: #000; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--void); }
+    ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
-        /* --- Fixed Mouse Glow Effect --- */
-        .cursor-glow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: radial-gradient(circle 450px at var(--x, 50%) var(--y, 50%), rgba(0, 210, 255, 0.15), transparent 70%);
-            z-index: -1; /* Background එකට උඩින් නමුත් Content එකට යටින් */
-            pointer-events: none;
-            transition: background 0.1s ease-out;
-            mix-blend-mode: screen;
-        }
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    }
 
-        /* --- Global Elements --- */
-        .main-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.92)), url('new my png 001.png');
-            background-size: cover; background-position: center;
-            z-index: -2;
-        }
+    a { color: inherit; }
+    img { max-width: 100%; }
 
-        /* --- Navigation --- */
-        nav {
-            position: fixed;
-            top: 20px; left: 50%; transform: translateX(-50%);
-            width: 90%; max-width: 1200px;
-            padding: 15px 40px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border-radius: 50px;
-            border: 1px solid var(--glass-border);
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000;
-        }
-        .logo { font-family: 'Syncopate', sans-serif; font-weight: 700; font-size: 1.1rem; letter-spacing: 2px; }
-        .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { text-decoration: none; color: #aaa; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary); }
-        .menu-btn { display: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
+    /* ===== Backdrop layers ===== */
+    #heroCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; }
+    #matrixCanvas {
+        position: fixed; inset: 0; width: 100vw; height: 100vh;
+        z-index: -3; opacity: 0; pointer-events: none; transition: opacity .6s ease;
+    }
+    #matrixCanvas.active { opacity: .16; }
+    #particlesCanvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -3; pointer-events: none; opacity: .5; }
 
-        .mobile-nav {
-            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
-            background: rgba(0,0,0,0.98); z-index: 2000; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; gap: 30px; transition: 0.5s;
-        }
-        .mobile-nav.active { right: 0; }
-        .mobile-nav a { font-size: 2rem; color: #fff; text-decoration: none; font-family: 'Exo 2'; }
+    .grain {
+        position: fixed; inset: 0; z-index: 5000; pointer-events: none; opacity: .03; mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
 
-        /* --- Hero Section --- */
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .hero h1 { font-family: 'Syncopate', sans-serif; font-size: clamp(3rem, 10vw, 6rem); line-height: 1.1; margin-bottom: 20px; }
-        .shine-text {
-            background: linear-gradient(120deg, #fff, var(--primary), #fff);
-            background-size: 200% auto; -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent; animation: shine 3s linear infinite;
-        }
-        @keyframes shine { to { background-position: 200% center; } }
+    .vignette { position: fixed; inset: 0; z-index: -1; pointer-events: none;
+        background: radial-gradient(120% 90% at 50% 0%, transparent 40%, var(--void) 100%),
+                    radial-gradient(80% 60% at 50% 100%, rgba(0,0,0,.5), transparent 70%);
+    }
 
-        /* --- Typing Animation Style --- */
-        .typing-container {
-            font-family: 'Exo 2'; 
-            letter-spacing: 8px; 
-            color: #888; 
-            font-weight: 300;
-            min-height: 1.5em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1em;
-            background-color: var(--primary);
-            margin-left: 5px;
-            animation: blink 0.7s infinite;
-        }
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
+    .cursor-glow {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: radial-gradient(circle 380px at var(--x, 50%) var(--y, 50%), var(--primary-glow), transparent 78%);
+        z-index: -2; pointer-events: none; mix-blend-mode: screen;
+    }
 
-        .btn-group { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
-        .btn-morph {
-            padding: 15px 35px; border: 1px solid var(--primary); color: #fff;
-            text-decoration: none; border-radius: 50px; font-weight: 700;
-            transition: 0.4s; overflow: hidden; display: flex; align-items: center; gap: 10px;
-        }
-        .btn-morph:hover { background: var(--primary); color: #000; box-shadow: 0 0 30px var(--primary); border-radius: 5px; }
+    /* Custom magnetic cursor — desktop only */
+    .cursor-dot, .cursor-ring {
+        position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+        transform: translate(-50%, -50%); border-radius: 50%;
+    }
+    .cursor-dot { width: 6px; height: 6px; background: var(--primary); box-shadow: 0 0 8px var(--primary); transition: opacity .2s; }
+    .cursor-ring { width: 34px; height: 34px; border: 1px solid var(--primary); opacity: .55;
+        transition: width .25s var(--ease), height .25s var(--ease), opacity .25s ease, border-color .25s ease, background .25s ease; }
+    .cursor-ring.hovered { width: 60px; height: 60px; background: var(--primary-glow); opacity: .9; }
+    @media (pointer: coarse) { .cursor-dot, .cursor-ring { display: none; } body { cursor: auto; } }
 
-        /* --- Stats Bar --- */
-        .stats-bar {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px; padding: 50px 5%; max-width: 1200px; margin: 0 auto;
-        }
-        .stat-card { background: var(--glass); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid var(--glass-border); }
-        .stat-card h2 { color: var(--primary); font-size: 2.5rem; font-family: 'Exo 2'; }
-        .stat-card p { color: #888; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; }
+    /* ===== Scroll reveal ===== */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal-scale { opacity: 0; transform: scale(.92); transition: opacity .7s var(--ease), transform .7s var(--ease); transition-delay: var(--d, 0s); }
+    .reveal-scale.in { opacity: 1; transform: scale(1); }
 
-        /* --- Image Swap Shine Effect --- */
-        .image-container { 
-            position: relative; 
-            border-radius: 30px; 
-            overflow: hidden; 
-            border: 1px solid var(--glass-border); 
-        }
-        .image-container img { width: 100%; display: block; }
-        
-        .image-container::after {
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: -150%; 
-            width: 80%; 
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
-            transform: skewX(-25deg); 
-            animation: imageSwipe 5s infinite;
-        }
-        @keyframes imageSwipe { 
-            0% { left: -150%; } 
-            30% { left: 150%; } 
-            100% { left: 150%; } 
-        }
+    /* ===== Nav ===== */
+    nav {
+        position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+        width: 94%; max-width: 1360px; padding: 14px 28px;
+        background: rgba(6,8,15,0.72); backdrop-filter: blur(22px) saturate(140%);
+        -webkit-backdrop-filter: blur(22px) saturate(140%);
+        border-radius: 14px; border: 1px solid var(--border);
+        display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+        transition: box-shadow .4s ease, border-color .4s ease;
+    }
+    nav.scrolled { box-shadow: 0 10px 40px rgba(0,0,0,.5), 0 0 24px var(--primary-glow); border-color: var(--border); }
 
-        /* --- Project Showcase --- */
-        .section-header { text-align: center; margin-bottom: 60px; font-family: 'Syncopate'; font-size: 2rem; position: relative; }
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; padding: 0 5%; max-width: 1300px; margin: 0 auto; }
-        .premium-card {
-            position: relative; background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-            border-radius: 25px; padding: 40px; border: 1px solid var(--glass-border);
-            overflow: hidden; transition: var(--transition-smooth);
-            display: flex; flex-direction: column; justify-content: space-between;
-        }
-        .premium-card:hover { transform: translateY(-15px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,210,255,0.1); }
-        .project-tag { font-size: 0.6rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 15px; font-weight: 700; }
-        .project-link { margin-top: 25px; text-decoration: none; color: #fff; font-size: 0.9rem; font-weight: 700; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
+    .logo {
+        font-family: var(--font-display); font-weight: 700; font-size: 1rem; letter-spacing: 1px;
+        display: flex; align-items: center; gap: 10px; text-decoration: none;
+    }
+    .logo .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 10px var(--primary); animation: dotPulse 2.4s infinite ease-in-out; }
+    @keyframes dotPulse { 0%,100%{ transform: scale(1); opacity:1;} 50%{ transform: scale(1.5); opacity:.6;} }
 
-        /* --- 💎 SKILLS SECTION --- */
-        .skills-orbit {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 25px; padding: 0 5%; max-width: 1200px; margin: 0 auto;
-        }
-        .skill-item-new {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--glass-border);
-            padding: 30px 15px; border-radius: 24px;
-            text-align: center; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative; overflow: hidden;
-        }
-        .skill-item-new i {
-            font-size: 2.5rem; color: #fff; margin-bottom: 15px;
-            display: block; transition: 0.4s;
-        }
-        .skill-item-new span {
-            font-family: 'Exo 2'; font-weight: 700; font-size: 0.85rem;
-            text-transform: uppercase; letter-spacing: 1.5px; color: #888;
-        }
-        .skill-item-new:hover {
-            background: rgba(0, 210, 255, 0.1);
-            border-color: var(--primary);
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.2);
-        }
-        .skill-item-new:hover i { color: var(--primary); transform: scale(1.2); }
-        .skill-item-new:hover span { color: #fff; }
+    .nav-links { display: flex; list-style: none; gap: 26px; align-items: center; }
+    .nav-links a {
+        text-decoration: none; color: var(--ink-dim); font-family: var(--font-mono); font-weight: 500; font-size: 0.72rem;
+        letter-spacing: 1.5px; text-transform: uppercase; transition: color .3s ease; position: relative; padding: 4px 0;
+    }
+    .nav-links a::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:var(--primary); transition: width .3s var(--ease); }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a:hover::after { width: 100%; }
 
-        /* --- 📱 CONNECT HUB --- */
-        .connect-modern {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; padding: 0 5%; max-width: 1100px; margin: 0 auto;
-        }
-        .connect-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-            border: 1px solid var(--glass-border); border-radius: 30px;
-            padding: 40px; text-align: center; transition: 0.4s;
-            position: relative; overflow: hidden;
-        }
-        .connect-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.08); }
-        .connect-card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 25px; }
-        .connect-card h3 { font-family: 'Syncopate'; font-size: 0.8rem; letter-spacing: 4px; margin-bottom: 15px; color: #fff; }
-        .connect-card p { font-family: 'Space Grotesk'; font-size: 1.1rem; color: #bbb; line-height: 1.6; }
-        
-        .copy-trigger {
-            display: inline-block; margin-top: 20px; padding: 10px 25px;
-            background: var(--primary); color: #000; border-radius: 50px;
-            font-weight: 900; font-size: 0.7rem; letter-spacing: 2px;
-            cursor: pointer; transition: 0.3s; text-transform: uppercase;
-        }
-        .copy-trigger:hover { transform: scale(1.05); box-shadow: 0 0 20px var(--primary); }
+    .nav-controls { display: flex; gap: 10px; align-items: center; }
+    .icon-btn {
+        background: var(--panel); border: 1px solid var(--border); color: var(--ink-dim);
+        width: 36px; height: 36px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+        cursor: pointer; transition: all .3s var(--ease); font-size: 0.82rem;
+    }
+    .icon-btn:hover { background: var(--primary); color: #000; border-color: var(--primary); box-shadow: 0 0 16px var(--primary-glow); transform: translateY(-2px); }
 
-        .centered-footer {
-            text-align: center; padding: 80px 5% 40px;
-        }
-        .loc-text { font-family: 'Exo 2'; font-size: 0.95rem; color: var(--primary); letter-spacing: 4px; margin-bottom: 25px; }
-        .copy-text { font-size: 0.75rem; letter-spacing: 6px; color: #444; margin-bottom: 8px; }
-        .brand-text { font-size: 0.65rem; letter-spacing: 4px; color: #222; font-weight: 700; }
+    .menu-btn { display: none; font-size: 1.3rem; cursor: pointer; color: var(--ink); }
 
-        section { padding: 100px 0; }
-        .company-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; padding: 100px 5%; max-width: 1300px; margin: 0 auto; }
+    .mobile-nav {
+        position: fixed; top: 0; right: -100%; width: 100%; height: 100dvh;
+        background: rgba(4,5,10,0.98); backdrop-filter: blur(24px); z-index: 2000;
+        display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 26px; transition: right .5s var(--ease);
+    }
+    .mobile-nav.active { right: 0; }
+    .mobile-nav a { font-family: var(--font-display); font-size: 1.6rem; font-weight: 600; color: #fff; text-decoration: none; }
+    .mobile-nav .close-mobile { position: absolute; top: 26px; right: 26px; font-size: 1.7rem; cursor: pointer; color: var(--primary); }
 
-        @media (max-width: 768px) {
-            nav { padding: 10px 25px; } .nav-links { display: none; } .menu-btn { display: block; }
-            .company-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    /* ===== Hero ===== */
+    .hero {
+        min-height: 100dvh; display: grid; place-items: center; position: relative; padding: 140px 6% 60px; overflow: hidden;
+    }
+    .hero-inner { max-width: 1360px; width: 100%; display: grid; grid-template-columns: 1.15fr 1fr; gap: 20px; align-items: center; }
+
+    .eyebrow {
+        font-family: var(--font-mono); font-size: .72rem; letter-spacing: 3px; color: var(--primary); text-transform: uppercase;
+        display: flex; align-items: center; gap: 10px; margin-bottom: 22px;
+    }
+    .eyebrow::before { content:''; width: 26px; height: 1px; background: var(--primary); }
+
+    .hero-title {
+        font-family: var(--font-display); font-weight: 700; line-height: .96;
+        font-size: clamp(2.6rem, 6.4vw, 5.4rem); letter-spacing: -1px; color: #fff;
+    }
+    .hero-title .grad {
+        background: linear-gradient(100deg, var(--teal), var(--violet) 65%, var(--teal));
+        background-size: 220% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
+        animation: gradShift 7s ease infinite;
+    }
+    @keyframes gradShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+
+    /* ===== Hero name — modern duotone / outline treatment ===== */
+    .hero-name {
+        font-family: var(--font-display); font-weight: 700; line-height: .86;
+        font-size: clamp(2.9rem, 7.4vw, 6.4rem); letter-spacing: -2px;
+        display: flex; flex-direction: column; gap: 6px;
+    }
+    .hero-name .grad {
+        background: linear-gradient(100deg, var(--teal), var(--violet) 65%, var(--teal));
+        background-size: 220% auto; -webkit-background-clip: text; background-clip: text; color: transparent;
+        animation: gradShift 7s ease infinite;
+    }
+    .hero-name .outline-word {
+        position: relative; color: transparent; letter-spacing: 3px;
+        -webkit-text-stroke: 1.5px rgba(238,241,247,0.9);
+        text-stroke: 1.5px rgba(238,241,247,0.9);
+        filter: drop-shadow(0 0 22px var(--primary-glow));
+        animation: outlineFlicker 6s ease-in-out infinite;
+    }
+    @keyframes outlineFlicker {
+        0%, 100% { -webkit-text-stroke-color: rgba(238,241,247,0.9); filter: drop-shadow(0 0 22px var(--primary-glow)); }
+        50% { -webkit-text-stroke-color: var(--primary); filter: drop-shadow(0 0 32px var(--primary-glow)); }
+    }
+    @media (max-width: 900px) { .hero-name { align-items: center; } }
+
+    .typing-container {
+        margin-top: 22px; font-family: var(--font-mono); color: var(--ink-dim); font-size: clamp(0.85rem, 1.6vw, 1.05rem);
+        display: flex; align-items: center; gap: 4px;
+    }
+    .typing-container .accent { color: var(--primary); }
+    .cursor-blink { display: inline-block; width: 8px; height: 1.05em; background-color: var(--primary); margin-left: 3px; animation: blink 0.9s infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .cyber-badge {
+        margin-top: 30px; display: inline-flex; align-items: center; gap: 12px; padding: 9px 18px;
+        background: var(--panel); border: 1px solid var(--border); border-radius: 50px;
+        font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-dim); backdrop-filter: blur(10px);
+    }
+    .status-dot { width: 8px; height: 8px; background: var(--teal); border-radius: 50%; box-shadow: 0 0 10px var(--teal); animation: pulse 1.6s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--teal-glow); } 70% { box-shadow: 0 0 0 9px rgba(69,232,196,0); } 100% { box-shadow: 0 0 0 0 rgba(69,232,196,0); } }
+
+    .btn-group { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 40px; }
+    .cyber-btn {
+        padding: 15px 30px; border: 1px solid var(--primary); color: #fff; text-decoration: none; border-radius: 10px;
+        font-family: var(--font-display); font-weight: 600; font-size: 0.82rem; letter-spacing: .5px;
+        transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), color .35s ease;
+        background: var(--panel); display: inline-flex; align-items: center; gap: 10px; cursor: pointer; position: relative; overflow: hidden;
+    }
+    .cyber-btn.solid { background: var(--primary); color: #04160f; }
+    .cyber-btn::before { content:''; position:absolute; inset:0; background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent); transform: translateX(-120%); transition: transform .6s ease; }
+    .cyber-btn:hover::before { transform: translateX(120%); }
+    .cyber-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px var(--primary-glow); }
+
+    .hero-visual { position: relative; height: clamp(340px, 46vw, 560px); }
+    .hero-visual .ring-label {
+        position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+        font-family: var(--font-mono); font-size: .64rem; letter-spacing: 4px; color: var(--ink-faint); text-align: center; pointer-events: none;
+    }
+
+    /* Scan line motif — reused as a section divider */
+    .scan-divider { position: relative; height: 1px; width: 100%; background: var(--border-soft); overflow: hidden; margin: 0 auto; max-width: 1360px; }
+    .scan-divider::after {
+        content:''; position: absolute; top:0; left:-30%; width: 30%; height: 100%;
+        background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        animation: scanMove 5s linear infinite;
+    }
+    @keyframes scanMove { 0% { left: -30%; } 100% { left: 100%; } }
+
+    /* ===== Stats ===== */
+    .stats-bar {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px;
+        padding: 60px 5% 20px; max-width: 1360px; margin: 0 auto; position: relative; z-index: 10;
+    }
+    .stat-card {
+        background: var(--panel); backdrop-filter: blur(18px); padding: 30px 26px; border-radius: 14px; border: 1px solid var(--border);
+        transition: transform .1s linear, border-color .3s ease, box-shadow .3s ease; will-change: transform;
+    }
+    .stat-card:hover { border-color: var(--primary); box-shadow: 0 16px 40px -14px var(--primary-glow); }
+    .stat-card h2 { font-family: var(--font-display); font-size: 2.6rem; font-weight: 700; color: #fff; }
+    .stat-card p { color: var(--ink-dim); font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 2px; margin-top: 6px; text-transform: uppercase; }
+
+    /* ===== Sections generic ===== */
+    section { padding: 110px 0; position: relative; }
+    .section-inner { max-width: 1360px; margin: 0 auto; padding: 0 5%; }
+    .section-header {
+        text-align: center; margin-bottom: 56px; font-family: var(--font-display); font-weight: 700;
+        font-size: clamp(1.6rem, 3vw, 2.3rem); color: #fff; position: relative;
+    }
+    .section-header .eyebrow { justify-content: center; margin-bottom: 14px; }
+    .section-header .eyebrow::before { display: none; }
+
+    /* ===== About ===== */
+    .company-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 60px; align-items: center; }
+
+    .image-container {
+        position: relative; border-radius: 18px; overflow: hidden; border: 1px solid var(--border);
+        box-shadow: 0 30px 60px rgba(0,0,0,.55); transform: translateZ(0);
+    }
+    .image-container::before {
+        content:''; position:absolute; inset:0; z-index: 2; pointer-events:none;
+        background: linear-gradient(180deg, transparent 60%, rgba(5,6,11,.85) 100%);
+    }
+    .image-container img { width: 100%; display: block; filter: contrast(106%) saturate(105%); }
+    .image-container::after {
+        content: '';
+        position: absolute; top: -60%; left: -60%; width: 35%; height: 220%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.45), rgba(255,255,255,0.85), rgba(255,255,255,0.45), transparent);
+        transform: rotate(20deg);
+        animation: whiteSweep 5s infinite ease-in-out;
+        pointer-events: none; z-index: 4;
+    }
+    @keyframes whiteSweep {
+        0% { left: -60%; }
+        35% { left: 130%; }
+        100% { left: 130%; }
+    }
+    .image-container .corner { position:absolute; width:22px; height:22px; border-color: var(--primary); z-index:5; }
+    .image-container .tl { top:14px; left:14px; border-top:2px solid; border-left:2px solid; }
+    .image-container .br { bottom:14px; right:14px; border-bottom:2px solid; border-right:2px solid; }
+
+    .about-box {
+        background: var(--panel); border-radius: 12px; padding: 26px 28px; margin-bottom: 16px; border: 1px solid var(--border);
+        border-left: 3px solid var(--primary); transition: transform .35s var(--ease), background .35s ease;
+    }
+    .about-box:hover { transform: translateX(8px); background: var(--panel-strong); }
+    .about-box h3 { color: #fff; font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 6px; font-weight: 600; }
+    .about-box p { color: var(--ink-dim); font-size: 0.92rem; }
+
+    /* Timeline */
+    .timeline-container { max-width: 900px; margin: 50px auto 0; position: relative; }
+    .timeline-container::before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 1px; height: 100%; background: linear-gradient(var(--border), var(--primary), var(--border)); }
+    .timeline-item { margin-bottom: 34px; position: relative; width: 50%; padding: 0 36px; }
+    .timeline-item:nth-child(odd) { left: 0; text-align: right; }
+    .timeline-item:nth-child(even) { left: 50%; text-align: left; }
+    .timeline-dot { position: absolute; top: 4px; width: 11px; height: 11px; background: var(--void); border: 2px solid var(--primary); border-radius: 50%; box-shadow: 0 0 12px var(--primary-glow); }
+    .timeline-item:nth-child(odd) .timeline-dot { right: -6px; }
+    .timeline-item:nth-child(even) .timeline-dot { left: -6px; }
+    .timeline-content { background: var(--panel); padding: 22px 26px; border-radius: 12px; border: 1px solid var(--border); transition: border-color .3s ease, transform .3s var(--ease); }
+    .timeline-content:hover { border-color: var(--primary); transform: scale(1.02); }
+    .timeline-content h4 { color: #fff; font-family: var(--font-display); font-size: 1rem; font-weight: 600; }
+    .timeline-content p { font-size: 0.85rem; color: var(--ink-dim); margin-top: 6px; }
+
+    /* ===== Skills ===== */
+    .skill-filters { display: flex; justify-content: center; gap: 12px; margin-bottom: 44px; flex-wrap: wrap; }
+    .filter-btn {
+        padding: 9px 20px; border-radius: 8px; background: var(--panel); border: 1px solid var(--border); color: var(--ink-dim);
+        cursor: pointer; transition: all .3s var(--ease); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase;
+    }
+    .filter-btn.active, .filter-btn:hover { background: var(--cat-color, var(--primary)); color: #04160f; border-color: var(--cat-color, var(--primary)); font-weight: 600; }
+    .filter-btn[data-cat="cyber"] { --cat-color: var(--teal); }
+    .filter-btn[data-cat="ai"] { --cat-color: var(--violet); }
+    .filter-btn[data-cat="dev"] { --cat-color: var(--amber); }
+    .filter-btn[data-cat="design"] { --cat-color: var(--rose); }
+
+    .skills-orbit { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; }
+    .skill-item-new {
+        background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 26px 14px; text-align: center;
+        transition: transform .3s var(--ease), border-color .3s ease, background .3s ease; cursor: default;
+    }
+    .skill-item-new[data-category="cyber"] { --cat-color: var(--teal); }
+    .skill-item-new[data-category="ai"] { --cat-color: var(--violet); }
+    .skill-item-new[data-category="dev"] { --cat-color: var(--amber); }
+    .skill-item-new[data-category="design"] { --cat-color: var(--rose); }
+    .skill-item-new:hover { transform: translateY(-6px); border-color: var(--cat-color); background: var(--panel-strong); box-shadow: 0 16px 34px -16px var(--cat-color); }
+    .skill-item-new i { font-size: 1.5rem; color: var(--cat-color); margin-bottom: 10px; display: block; }
+    .skill-item-new span { font-family: var(--font-mono); font-size: 0.76rem; color: var(--ink); letter-spacing: .5px; }
+
+    /* ===== Demos ===== */
+    .demo-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px; }
+    .demo-box { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 28px; transition: border-color .3s ease; }
+    .demo-box:hover { border-color: var(--primary); }
+    .demo-box h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: #fff; display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .demo-box h3 i { color: var(--primary); }
+    .demo-box p { font-size: 0.82rem; color: var(--ink-dim); margin-bottom: 16px; }
+    .demo-box input {
+        width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: #fff; padding: 11px 14px;
+        border-radius: 8px; font-size: 0.85rem; outline: none; font-family: var(--font-mono); margin-bottom: 12px; transition: border-color .3s ease;
+    }
+    .demo-box input:focus { border-color: var(--primary); }
+    .demo-box button {
+        width: 100%; background: var(--primary); color: #04160f; font-weight: 700; border: none; padding: 12px; border-radius: 8px;
+        cursor: pointer; font-family: var(--font-display); font-size: 0.78rem; letter-spacing: .5px; transition: transform .25s var(--ease), box-shadow .25s ease;
+    }
+    .demo-box button:hover { transform: translateY(-2px); box-shadow: 0 10px 26px var(--primary-glow); }
+    .demo-box .out { margin-top: 14px; font-size: 0.82rem; color: var(--primary); min-height: 40px; font-family: var(--font-mono); word-break: break-all; }
+
+    /* ===== Projects ===== */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+    .premium-card {
+        background: linear-gradient(155deg, var(--panel-strong), var(--panel)); border: 1px solid var(--border); border-radius: 18px;
+        padding: 38px; display: flex; flex-direction: column; justify-content: space-between; min-height: 260px;
+        transition: transform .1s linear, border-color .3s ease, box-shadow .3s ease; will-change: transform; position: relative; overflow: hidden;
+    }
+    .premium-card::before { content:''; position:absolute; top:-40%; right:-20%; width:60%; height:60%; background: radial-gradient(circle, var(--primary-glow), transparent 70%); opacity:.5; pointer-events:none; }
+    .premium-card:hover { border-color: var(--primary); box-shadow: 0 26px 60px -20px var(--primary-glow); }
+    .project-tag { font-family: var(--font-mono); font-size: 0.7rem; color: var(--primary); letter-spacing: 2px; margin-bottom: 14px; }
+    .premium-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #fff; }
+    .premium-card p { color: var(--ink-dim); font-size: 0.92rem; line-height: 1.6; }
+    .project-link {
+        margin-top: 26px; display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-family: var(--font-display);
+        font-weight: 600; font-size: 0.85rem; cursor: pointer; width: fit-content; transition: gap .25s ease;
+    }
+    .project-link:hover { gap: 14px; }
+
+    /* ===== Terminal ===== */
+    .terminal-window { max-width: 900px; margin: 0 auto; background: #05070c; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,.5); }
+    .terminal-header { background: rgba(255,255,255,0.04); padding: 12px 18px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
+    .term-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .terminal-body { padding: 20px; min-height: 160px; max-height: 260px; overflow-y: auto; font-family: var(--font-mono); font-size: 0.82rem; color: var(--ink-dim); line-height: 1.7; }
+    .terminal-input-line { display: flex; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--border); }
+    .terminal-input-line input { flex: 1; background: transparent; border: none; outline: none; color: #fff; font-family: var(--font-mono); font-size: 0.85rem; }
+
+    /* ===== Cyber intel bento grid ===== */
+    .cyber-grid-20 { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+    .cyber-card-new {
+        background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 24px;
+        border-left: 3px solid var(--cat-color, var(--primary)); position: relative;
+        transition: transform .1s linear, border-color .3s ease, box-shadow .3s ease; will-change: transform;
+    }
+    .cyber-card-new[data-cat="cyber"] { --cat-color: var(--teal); }
+    .cyber-card-new[data-cat="ai"] { --cat-color: var(--violet); }
+    .cyber-card-new[data-cat="dev"] { --cat-color: var(--amber); }
+    .cyber-card-new[data-cat="design"] { --cat-color: var(--rose); }
+    .cyber-card-new:hover { border-color: var(--cat-color, var(--primary)); box-shadow: 0 20px 44px -18px var(--cat-color, var(--primary-glow)); }
+    .cyber-card-new h3 {
+        color: #ffffff; font-family: var(--font-display); font-size: 0.92rem; font-weight: 600; letter-spacing: .3px;
+        margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .cyber-card-new h3 i { color: var(--cat-color, var(--primary)); font-size: 1rem; }
+    .cyber-badge-sub { font-size: 0.58rem; padding: 3px 9px; background: rgba(255,255,255,.06); border: 1px solid var(--cat-color); border-radius: 20px; color: var(--cat-color); font-family: var(--font-mono); letter-spacing: 1px; }
+    .cyber-card-new input, .cyber-card-new select, .cyber-card-new textarea {
+        width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: #fff; padding: 9px 12px;
+        border-radius: 7px; font-size: 0.78rem; outline: none; font-family: var(--font-mono); transition: border-color .3s ease;
+    }
+    .cyber-card-new input:focus, .cyber-card-new select:focus { border-color: var(--cat-color); }
+
+    .faq-item { border-bottom: 1px solid var(--border-soft); padding: 11px 0; cursor: pointer; }
+    .faq-question { font-family: var(--font-display); color: #fff; font-size: 0.82rem; font-weight: 500; display: flex; justify-content: space-between; }
+    .faq-answer { font-family: var(--font-mono); color: var(--ink-dim); font-size: 0.74rem; margin-top: 8px; display: none; line-height: 1.6; }
+
+    /* ===== Contact ===== */
+    .connect-modern { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; margin-bottom: 30px; }
+    .connect-card {
+        background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 32px 24px; text-align: center;
+        transition: transform .35s var(--ease), border-color .35s ease;
+    }
+    .connect-card:hover { transform: translateY(-6px); border-color: var(--primary); }
+    .connect-card i { font-size: 1.8rem; color: var(--primary); margin-bottom: 14px; }
+    .connect-card h3 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; letter-spacing: 1px; }
+    .copy-trigger { margin-top: 14px; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 1.5px; color: var(--primary); cursor: pointer; border: 1px solid var(--border); padding: 7px 14px; border-radius: 20px; display: inline-block; transition: all .3s ease; }
+    .copy-trigger:hover { background: var(--primary); color: #04160f; }
+
+    .centered-footer { text-align: center; padding: 70px 5% 20px; }
+
+    /* ===== AI chatbot widget ===== */
+    .scroll-top-btn {
+        position: fixed; bottom: 26px; left: 26px; width: 44px; height: 44px; background: var(--panel-strong); backdrop-filter: blur(10px);
+        border: 1px solid var(--border); color: var(--primary); border-radius: 50%; display: flex;
+        align-items: center; justify-content: center; cursor: pointer; z-index: 1800; transition: all .3s ease;
+        opacity: 0; pointer-events: none; transform: translateY(10px);
+    }
+    .scroll-top-btn.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .scroll-top-btn:hover { background: var(--primary); color: #04160f; }
+
+    .chat-widget-btn {
+        position: fixed; bottom: 26px; right: 26px; width: 56px; height: 56px; background: var(--primary);
+        border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #04160f;
+        cursor: pointer; box-shadow: 0 0 22px var(--primary-glow); z-index: 1800; transition: transform .3s ease;
+        animation: chatPulse 2.4s infinite ease-in-out;
+    }
+    @keyframes chatPulse { 0%,100% { box-shadow: 0 0 16px var(--primary-glow); } 50% { box-shadow: 0 0 32px var(--primary-glow); } }
+    .chat-widget-btn:hover { transform: scale(1.08); }
+    .chat-window {
+        position: fixed; bottom: 92px; right: 26px; width: 340px; height: 440px; background: #05070c; border: 1px solid var(--border);
+        border-radius: 16px; display: none; flex-direction: column; overflow: hidden; z-index: 1800; box-shadow: 0 30px 60px rgba(0,0,0,.6);
+        animation: fadeInUp .4s var(--ease);
+    }
+    @keyframes fadeInUp { from { opacity:0; transform: translateY(14px);} to {opacity:1; transform:translateY(0);} }
+    .chat-header { background: rgba(255,255,255,0.04); padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); font-family: var(--font-display); font-size: 0.85rem; font-weight: 600; }
+    .chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-family: var(--font-mono); font-size: 0.78rem; }
+    .msg { padding: 10px 14px; border-radius: 10px; max-width: 85%; line-height: 1.4; animation: fadeIn .3s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .msg.bot { background: rgba(255,255,255,0.05); align-self: flex-start; color: #cbd5e1; }
+    .msg.user { background: var(--primary); color: #04160f; font-weight: 700; align-self: flex-end; }
+    .chat-input { display: flex; padding: 10px; border-top: 1px solid var(--border); }
+    .chat-input input { flex: 1; background: transparent; border: none; outline: none; color: #fff; padding: 8px; font-family: var(--font-mono); font-size: 0.8rem; }
+
+    /* ===== Modal ===== */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(3,4,8,0.92); backdrop-filter: blur(16px); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; }
+    .modal-card { background: #05070c; border: 1px solid var(--primary); border-radius: 16px; padding: 36px; max-width: 640px; width: 100%; position: relative; box-shadow: 0 0 40px var(--primary-glow); animation: zoomIn .3s var(--ease); }
+    @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .close-modal { position: absolute; top: 16px; right: 20px; font-size: 1.4rem; color: #fff; cursor: pointer; transition: transform .3s ease; }
+    .close-modal:hover { color: var(--primary); transform: rotate(90deg); }
+
+    @media (max-width: 900px) {
+        .hero-inner { grid-template-columns: 1fr; text-align: center; }
+        .eyebrow { justify-content: center; }
+        .hero-visual { order: -1; height: 300px; }
+        .btn-group { justify-content: center; }
+        .company-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+        .nav-links { display: none; } .menu-btn { display: block; }
+        .timeline-container::before { left: 18px; }
+        .timeline-item { width: 100%; padding-left: 42px; text-align: left !important; }
+        .timeline-item:nth-child(even) { left: 0; }
+        .timeline-dot { left: 12px !important; }
+        .chat-window { width: 90vw; right: 5vw; }
+        section { padding: 80px 0; }
+    }
+</style>
 </head>
 <body>
 
-    <div class="main-bg"></div>
-    <div class="cursor-glow" id="glow"></div>
+<div class="grain"></div>
+<div class="vignette"></div>
+<canvas id="matrixCanvas"></canvas>
+<canvas id="particlesCanvas"></canvas>
+<div class="cursor-glow" id="glow"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="cursorDot"></div>
 
-    <nav>
-        <div class="logo">PORTFOLIO</div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<div class="scroll-top-btn" id="scrollTopBtn" onclick="scrollToTop()"><i class="fas fa-arrow-up"></i></div>
+
+<!-- Navigation -->
+<nav id="mainNav">
+    <a href="#home" class="logo"><span class="dot"></span>DINUSH.DEV</a>
+    <ul class="nav-links">
+        <li><a href="#home">Root</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#demos">Demos</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#cyber-intel">Cyber Intel</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+        <div class="icon-btn" onclick="toggleMatrix()" title="Toggle Matrix Mode"><i class="fas fa-code"></i></div>
+        <div class="icon-btn" onclick="cycleTheme()" title="Change Accent"><i class="fas fa-palette"></i></div>
+        <div class="icon-btn" id="soundToggle" onclick="toggleSound()" title="Toggle Audio FX"><i class="fas fa-volume-up"></i></div>
         <div class="menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-    </nav>
-
-    <div class="mobile-nav" id="mobileNav">
-        <i class="fas fa-times" style="position: absolute; top: 30px; right: 30px; font-size: 2rem;" onclick="toggleMenu()"></i>
-        <a href="#home" onclick="toggleMenu()">Home</a>
-        <a href="#about" onclick="toggleMenu()">About</a>
-        <a href="#skills" onclick="toggleMenu()">Skills</a>
-        <a href="#projects" onclick="toggleMenu()">Work</a>
-        <a href="#contact" onclick="toggleMenu()">Contact</a>
     </div>
+</nav>
 
-    <section class="hero" id="home">
-        <h1 class="shine-text" data-aos="zoom-in">DINUSH DILHARA</h1>
-        <div class="typing-container">
-            <span id="typing-text"></span><span id="cursor" class="cursor"></span>
-        </div>
-        
-        <div class="btn-group" data-aos="fade-up" data-aos-delay="400">
-            <a href="https://github.com/KDD01" class="btn-morph" target="_blank"><i class="fab fa-github"></i> GITHUB ACCESS</a>
-            <a href="#contact" class="btn-morph"><i class="fas fa-paper-plane"></i> HIRE ME</a>
-        </div>
-    </section>
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+    <i class="fas fa-times close-mobile" onclick="toggleMenu()"></i>
+    <a href="#home" onclick="toggleMenu()">Root</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#skills" onclick="toggleMenu()">Skills</a>
+    <a href="#demos" onclick="toggleMenu()">Demos</a>
+    <a href="#projects" onclick="toggleMenu()">Work</a>
+    <a href="#cyber-intel" onclick="toggleMenu()">Cyber Intel</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
 
-    <div class="stats-bar" data-aos="fade-up">
-        <div class="stat-card"><h2>15+</h2><p>Projects Done</p></div>
-        <div class="stat-card"><h2>02+</h2><p>Founded Ventures</p></div>
-        <div class="stat-card"><h2>24/7</h2><p>AI Innovation</p></div>
-        <div class="stat-card"><h2>100%</h2><p>Digital Success</p></div>
+<!-- Hero -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div>
+            <div class="eyebrow reveal">SYSTEM.INIT // SRI LANKA</div>
+            <h1 class="hero-name reveal"><span class="grad">DINUSH</span><span class="outline-word">DILHARA</span></h1>
+            <div class="typing-container reveal" style="--d:.15s">
+                <span class="accent">&gt;</span><span id="typing-text"></span><span id="cursorType" class="cursor-blink"></span>
+            </div>
+
+            <div class="cyber-badge reveal" style="--d:.25s">
+                <span class="status-dot"></span>
+                <span>SYSTEM: ONLINE&nbsp;|&nbsp;SL TIME: <span id="slClock" style="color:var(--primary);">00:00:00</span>&nbsp;|&nbsp;LATENCY: <span id="pingCounter" style="color:var(--teal);">12ms</span></span>
+            </div>
+
+            <div class="btn-group reveal" style="--d:.35s">
+                <a href="https://github.com/KDD01" class="cyber-btn solid" target="_blank"><i class="fab fa-github"></i> GITHUB TERMINAL</a>
+                <a href="#contact" class="cyber-btn"><i class="fas fa-shield-alt"></i> INITIALIZE CONTACT</a>
+            </div>
+        </div>
+
+        <div class="hero-visual reveal-scale" style="--d:.2s">
+            <canvas id="heroCanvas"></canvas>
+            <div class="ring-label">NEURAL&nbsp;CORE</div>
+        </div>
     </div>
+</section>
 
-    <section id="about">
+<div class="scan-divider"></div>
+
+<!-- Stats -->
+<div class="stats-bar">
+    <div class="stat-card tilt reveal"><h2>15+</h2><p>Projects Deployed</p></div>
+    <div class="stat-card tilt reveal" style="--d:.08s"><h2>02+</h2><p>Cyber Ventures</p></div>
+    <div class="stat-card tilt reveal" style="--d:.16s"><h2>24/7</h2><p>AI &amp; Threat Monitoring</p></div>
+    <div class="stat-card tilt reveal" style="--d:.24s"><h2>100%</h2><p>System Uptime</p></div>
+</div>
+
+<!-- About -->
+<section id="about">
+    <div class="section-inner">
         <div class="company-grid">
-            <div class="image-container" data-aos="fade-right">
+            <div class="image-container reveal">
                 <img src="new my png 001.png" alt="Dinush Dilhara">
+                <div class="corner tl"></div><div class="corner br"></div>
             </div>
-            <div data-aos="fade-left">
-                <h2 class="section-header" style="text-align: left; font-size: 1.5rem;">LEADERSHIP & VISION</h2>
-                <div style="background: var(--glass); border-radius: 20px; padding: 30px; margin-bottom: 20px; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); font-family: 'Exo 2';">Founder of KDD Studio</h3>
-                    <p style="color: #bbb;">Premium visual identities and cinematic branding solutions.</p>
+            <div class="reveal" style="--d:.1s">
+                <div class="eyebrow">WHO IS BEHIND THE TERMINAL</div>
+                <h2 class="hero-title" style="font-size: clamp(1.6rem,3vw,2.2rem); margin-bottom: 28px;">Cyber Architect &amp; Entrepreneur</h2>
+                <div class="about-box">
+                    <h3>Founder of KDD Studio</h3>
+                    <p>Architecting high-end digital visual identities and cinematic graphic solutions.</p>
                 </div>
-                <div style="background: var(--glass); border-radius: 20px; padding: 30px; border-left: 4px solid var(--primary);">
-                    <h3 style="color: var(--primary); font-family: 'Exo 2';">Lead at DS Media Hub</h3>
-                    <p style="color: #bbb;">Innovating digital marketing through AI integration.</p>
+                <div class="about-box">
+                    <h3>Lead at DS Media Hub</h3>
+                    <p>Pioneering next-gen automated marketing and AI-driven growth frameworks.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-header reveal" style="margin-top: 100px;">
+            <div class="eyebrow">CHRONOLOGY</div>
+            Roadmap &amp; Milestones
+        </h2>
+        <div class="timeline-container">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>Advanced Level Studies</h4>
+                    <p>Preparing for A/L Examinations specializing in Information Technology (IT) syllabus &amp; Systems Security.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal" style="--d:.1s">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>Founded KDD Studio &amp; DS Media Hub</h4>
+                    <p>Launched cyber digital ventures specializing in UI/UX, cinematic graphics, and AI automation.</p>
+                </div>
+            </div>
+            <div class="timeline-item reveal" style="--d:.2s">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h4>AI &amp; Cyber Security Engineering</h4>
+                    <p>Engineering custom LLM platforms like DiNuX AI along with interactive hacking utilities.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="projects">
-        <h2 class="section-header" data-aos="fade-up">FEATURED WORK</h2>
-        <div class="project-grid">
-            <div class="premium-card" data-aos="fade-up">
-                <div>
-                    <div class="project-tag">Artificial Intelligence</div>
-                    <h3 style="font-family: 'Exo 2'; font-size: 1.8rem; margin-bottom: 15px;">DiNuX AI Assistant</h3>
-                    <p style="color: #888; font-size: 0.95rem; line-height: 1.6;">Custom-built LLM powered AI interface utilizing Streamlit and Python for high-performance automation.</p>
-                </div>
-                <a href="#" class="project-link">EXPLORE CODE <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="premium-card" data-aos="fade-up" data-aos-delay="200">
-                <div>
-                    <div class="project-tag">Branding & Ecosystem</div>
-                    <h3 style="font-family: 'Exo 2'; font-size: 1.8rem; margin-bottom: 15px;">KDD Store Branding</h3>
-                    <p style="color: #888; font-size: 0.95rem; line-height: 1.6;">A complete digital ecosystem featuring professional UI/UX, advanced automation, and cinematic visual identity.</p>
-                </div>
-                <a href="#" class="project-link">VIEW CASE STUDY <i class="fas fa-arrow-right"></i></a>
-            </div>
+<div class="scan-divider"></div>
+
+<!-- Skills -->
+<section id="skills">
+    <div class="section-inner">
+        <h2 class="section-header reveal"><div class="eyebrow">CAPABILITY MATRIX</div>Cyber Capabilities</h2>
+        <div class="skill-filters reveal">
+            <button class="filter-btn active" onclick="filterSkills('all', event)">All Nodes</button>
+            <button class="filter-btn" data-cat="cyber" onclick="filterSkills('cyber', event)">Cyber &amp; Security</button>
+            <button class="filter-btn" data-cat="ai" onclick="filterSkills('ai', event)">AI &amp; Data</button>
+            <button class="filter-btn" data-cat="dev" onclick="filterSkills('dev', event)">Development</button>
+            <button class="filter-btn" data-cat="design" onclick="filterSkills('design', event)">Graphics &amp; Media</button>
         </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-header" data-aos="fade-up">CORE EXPERTISE</h2>
         <div class="skills-orbit">
-            <div class="skill-item-new" data-aos="zoom-in"><i class="fab fa-python"></i><span>Python</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="50"><i class="fas fa-brain"></i><span>LLM Models</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-rocket"></i><span>Streamlit</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-database"></i><span>SQL DB</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-hashtag"></i><span>C# / Java</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-globe"></i><span>Web Design</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-palette"></i><span>Graphics</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-robot"></i><span>AI Prompting</span></div>
-            <div class="skill-item-new" data-aos="zoom-in" data-aos-delay="400"><i class="fas fa-cloud-upload-alt"></i><span>Cloud Hosting</span></div>
+            <div class="skill-item-new reveal-scale" data-category="cyber"><i class="fas fa-user-shield"></i><span>Security</span></div>
+            <div class="skill-item-new reveal-scale" data-category="dev" style="--d:.04s"><i class="fab fa-python"></i><span>Python</span></div>
+            <div class="skill-item-new reveal-scale" data-category="ai" style="--d:.08s"><i class="fas fa-brain"></i><span>LLM Models</span></div>
+            <div class="skill-item-new reveal-scale" data-category="dev" style="--d:.12s"><i class="fas fa-rocket"></i><span>Streamlit</span></div>
+            <div class="skill-item-new reveal-scale" data-category="dev" style="--d:.16s"><i class="fas fa-database"></i><span>SQL DB</span></div>
+            <div class="skill-item-new reveal-scale" data-category="cyber" style="--d:.2s"><i class="fas fa-network-wired"></i><span>Networking</span></div>
+            <div class="skill-item-new reveal-scale" data-category="design" style="--d:.24s"><i class="fas fa-palette"></i><span>Graphics</span></div>
+            <div class="skill-item-new reveal-scale" data-category="ai" style="--d:.28s"><i class="fas fa-robot"></i><span>AI Prompting</span></div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2 class="section-header" data-aos="fade-up">CONNECT WITH ME</h2>
+<!-- Demos -->
+<section id="demos">
+    <div class="section-inner">
+        <h2 class="section-header reveal"><div class="eyebrow">TRY IT LIVE</div>Live Cyber Demos</h2>
+        <div class="demo-container">
+            <div class="demo-box reveal">
+                <h3><i class="fas fa-robot"></i> DiNuX AI Prompt Simulator</h3>
+                <p>Test prompt responses from DiNuX AI Engine.</p>
+                <input type="text" id="demoAiInput" placeholder="Enter test query (e.g., 'status')...">
+                <button onclick="runAiDemo()">GENERATE RESPONSE</button>
+                <div id="demoAiOutput" class="out">&gt; Output will render here...</div>
+            </div>
+            <div class="demo-box reveal" style="--d:.1s">
+                <h3><i class="fas fa-search-location"></i> Port / Target Scanner</h3>
+                <p>Simulate security audit on target node.</p>
+                <input type="text" id="scanTarget" value="127.0.0.1 (Localhost)">
+                <button onclick="runScanDemo()">EXECUTE SCAN</button>
+                <div id="scanOutput" class="out" style="color:var(--teal);">&gt; Ready for audit...</div>
+            </div>
+            <div class="demo-box reveal" style="--d:.2s">
+                <h3><i class="fas fa-key"></i> KDD Cyber Text Encryptor</h3>
+                <p>Encrypt raw text into base64 hash.</p>
+                <input type="text" id="encryptInput" placeholder="Type plain text...">
+                <button onclick="runEncryptDemo()">ENCRYPT DATA</button>
+                <div id="encryptOutput" class="out">&gt; Encrypted hash...</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="scan-divider"></div>
+
+<!-- Projects -->
+<section id="projects">
+    <div class="section-inner">
+        <h2 class="section-header reveal"><div class="eyebrow">SELECTED WORK</div>Featured Deployments</h2>
+        <div class="project-grid">
+            <div class="premium-card tilt reveal">
+                <div>
+                    <div class="project-tag">// ARTIFICIAL INTELLIGENCE</div>
+                    <h3>DiNuX AI Assistant</h3>
+                    <p>Custom LLM interface built with Python and Streamlit featuring real-time stream responses.</p>
+                </div>
+                <div class="project-link" onclick="openModal('dinux')">INSPECT CASE STUDY <i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="premium-card tilt reveal" style="--d:.15s">
+                <div>
+                    <div class="project-tag">// BRANDING &amp; CYBER ECOSYSTEM</div>
+                    <h3>KDD Store Branding</h3>
+                    <p>Digital visual architecture including automated workflows, branding, and dynamic graphics.</p>
+                </div>
+                <div class="project-link" onclick="openModal('kdd')">INSPECT CASE STUDY <i class="fas fa-arrow-right"></i></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Terminal -->
+<section class="terminal-section">
+    <div class="section-inner">
+        <h2 class="section-header reveal"><div class="eyebrow">DIRECT ACCESS</div>Hacker Terminal Console</h2>
+        <div class="terminal-window reveal">
+            <div class="terminal-header">
+                <div class="term-dot" style="background:#ef4444;"></div>
+                <div class="term-dot" style="background:#f59e0b;"></div>
+                <div class="term-dot" style="background:#10b981;"></div>
+                <span style="font-size:0.72rem; color:var(--ink-faint); margin-left:10px; font-family: var(--font-mono);">root@dinush-cyber-shell:~#</span>
+            </div>
+            <div class="terminal-body" id="termOutput">
+                <p>&gt; Dinush Cyber Shell v3.0 Activated.</p>
+                <p>&gt; Type <span style="color:var(--primary);">"help"</span> or <span style="color:var(--primary);">"hack"</span> for commands.</p>
+            </div>
+            <div class="terminal-input-line">
+                <span style="color:var(--primary); font-family: var(--font-mono);">$</span>
+                <input type="text" id="termInput" placeholder="Enter cyber command..." onkeydown="handleTerminal(event)">
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="scan-divider"></div>
+
+<!-- Cyber Intel -->
+<section id="cyber-intel">
+    <div class="section-inner">
+        <h2 class="section-header reveal"><div class="eyebrow">20+ MODULES // LIVE TELEMETRY</div>Advanced Cyber Intel</h2>
+        <div class="cyber-grid-20">
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber">
+                <h3>Threat Intel Radar <i class="fas fa-globe-americas"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); margin-bottom: 10px;">Monitored Nodes: Colombo / SG / US</p>
+                <div style="padding:10px; background:rgba(0,0,0,0.35); border:1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; font-size:0.75rem; color:#10b981; font-weight: 600;">
+                    <i class="fas fa-shield-alt" style="margin-right: 5px;"></i> [DEFCON 1] Zero Vulnerabilities Detected.
+                </div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber" style="--d:.03s">
+                <h3>Hacking Cheat-Sheet <i class="fas fa-terminal"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); margin-bottom: 8px;">Select command to view syntax:</p>
+                <select id="cheatSelect" onchange="showCheatSyntax()">
+                    <option value="nmap">Nmap Port Scan</option>
+                    <option value="sqlmap">SQL Injection Audit</option>
+                    <option value="aircrack">Wireless Audit</option>
+                </select>
+                <div id="cheatOutput" style="margin-top:10px; font-size:0.75rem; color:var(--teal); min-height:25px; font-family: var(--font-mono);">&gt; nmap -sS -p- 127.0.0.1</div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber" style="--d:.06s">
+                <h3>Vulnerabilities <span class="cyber-badge-sub">AUDITED</span></h3>
+                <ul style="font-size:0.75rem; color:var(--ink-dim); list-style:none; line-height:1.9;">
+                    <li><i class="fas fa-check-circle" style="color:var(--teal); margin-right:6px;"></i> SQLi Defenses Hardened</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--teal); margin-right:6px;"></i> XSS Input Sanitization</li>
+                    <li><i class="fas fa-check-circle" style="color:var(--teal); margin-right:6px;"></i> CSRF Token Validation</li>
+                </ul>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="dev" style="--d:.09s">
+                <h3>Telemetry Meter <i class="fas fa-chart-line"></i></h3>
+                <div style="height:45px; background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius: 8px; display:flex; align-items:flex-end; gap:6px; padding:6px; margin-top: 8px;">
+                    <div style="flex:1; background:var(--amber); height:40%; border-radius: 2px;"></div>
+                    <div style="flex:1; background:var(--amber); height:75%; border-radius: 2px;"></div>
+                    <div style="flex:1; background:var(--amber); height:50%; border-radius: 2px;"></div>
+                    <div style="flex:1; background:var(--amber); height:95%; border-radius: 2px;"></div>
+                    <div style="flex:1; background:var(--amber); height:65%; border-radius: 2px;"></div>
+                </div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="dev" style="--d:.12s">
+                <h3>Converter Tool <i class="fas fa-calculator"></i></h3>
+                <input type="text" id="binInp" placeholder="Enter text to convert..." oninput="convertHexBin()">
+                <div id="binOut" style="margin-top:10px; font-size:0.7rem; color:var(--amber); word-break:break-all; font-family: var(--font-mono);">&gt; Hex output...</div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber" style="--d:.15s">
+                <h3>Knowledge Test <i class="fas fa-question-circle"></i></h3>
+                <p id="quizQ" style="font-size:0.75rem; color:var(--ink-dim); margin-bottom: 8px;">Q: What does SOP stand for in Logic Gates?</p>
+                <div style="display:flex; gap:8px;">
+                    <button onclick="checkQuiz(true)" style="flex:1; padding:7px; font-size:0.7rem; background:rgba(69,232,196,0.1); border:1px solid var(--teal); color:#fff; border-radius:6px; cursor:pointer; font-family: var(--font-mono);">Sum Of Products</button>
+                    <button onclick="checkQuiz(false)" style="flex:1; padding:7px; font-size:0.7rem; background:rgba(255,255,255,0.05); border:1px solid var(--border); color:#fff; border-radius:6px; cursor:pointer; font-family: var(--font-mono);">Standard Procedure</button>
+                </div>
+                <div id="quizAns" style="margin-top:8px; font-size:0.75rem;"></div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="design" style="--d:.18s">
+                <h3>Feedback <i class="fas fa-quote-right"></i></h3>
+                <blockquote style="font-size:0.75rem; color:var(--ink-dim); font-style:italic; line-height: 1.5;">"Exceptional AI &amp; Cyber Solutions. Top tier Sri Lankan developer quality."</blockquote>
+                <p style="font-size:0.65rem; color:var(--rose); margin-top:8px; font-weight:700;">- KDD Studio Ecosystem</p>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="dev" style="--d:.21s">
+                <h3>Server Health <i class="fas fa-server"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); margin-bottom:4px;">Groq API Engine: <span style="color:#10b981; font-weight: 700;">100% Active</span></p>
+                <p style="font-size:0.75rem; color:var(--ink-dim);">Streamlit Server: <span style="color:#10b981; font-weight: 700;">Online</span></p>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber" style="--d:.24s">
+                <h3>Pass Audit <i class="fas fa-lock"></i></h3>
+                <input type="password" id="passInp" placeholder="Test password strength..." oninput="checkPassStrength()">
+                <div id="passScore" style="margin-top:10px; font-size:0.75rem; color:var(--teal); font-weight:600; font-family: var(--font-mono);">Strength: None</div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber">
+                <h3>Cyber Glossary <i class="fas fa-book"></i></h3>
+                <input type="text" id="glossInp" placeholder="Search (SQLi, SOP, XSS)..." oninput="searchGlossary()">
+                <div id="glossOut" style="margin-top:10px; font-size:0.75rem; color:var(--ink-dim); font-family: var(--font-mono);">&gt; Type acronym to inspect.</div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="dev" style="--d:.03s">
+                <h3>Operations Node <i class="fas fa-road"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); line-height: 1.5;">Next Milestone: Deploying Autonomous AI Security Agents across cloud nodes.</p>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="ai" style="--d:.06s">
+                <h3>Tech Index <i class="fas fa-coins"></i></h3>
+                <p style="font-size:0.75rem; color:#10b981; font-weight: 700; margin-bottom: 4px;">AI Token Index: +14.2% &#9650;</p>
+                <p style="font-size:0.75rem; color:var(--violet);">Cyber Defense Unit: Active</p>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="dev" style="--d:.09s">
+                <h3>Key Credentials <i class="fas fa-file-download"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); margin-bottom: 10px;">Request official developer profile resume.</p>
+                <button onclick="alert('Developer Credentials Key: DINUSH-DEV-2026-CLEARANCE-GRANTED')" style="width:100%; background:var(--amber); color:#1c1200; font-weight:800; border:none; padding:10px; border-radius:6px; cursor:pointer; font-family:var(--font-display); font-size:0.75rem;">DOWNLOAD CREDENTIALS</button>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="dev" style="--d:.12s">
+                <h3>Hardware Telemetry <i class="fas fa-microchip"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); margin-bottom: 4px;">CPU Overhead: 4.2%</p>
+                <p style="font-size:0.75rem; color:var(--ink-dim);">RAM Overhead: 256MB / 16GB</p>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="design" style="--d:.15s">
+                <h3>Synthesizer <i class="fas fa-sliders-h"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); margin-bottom: 10px;">Web Audio FX Synthesizer Active</p>
+                <button onclick="playSound(1200, 0.2)" style="width:100%; background:rgba(255,255,255,0.05); color:#fff; border:1px solid var(--border); padding:8px; border-radius:6px; cursor:pointer; font-family:var(--font-mono); font-size:0.75rem;">TEST CYBER TONE</button>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber" style="--d:.18s">
+                <h3>PGP Exchange <i class="fas fa-user-secret"></i></h3>
+                <textarea readonly style="height:60px; font-size:0.63rem; background:rgba(0,0,0,0.4); color:var(--teal); resize:none;">-----BEGIN PGP PUBLIC KEY BLOCK-----
+mQENBF9...DINUSH_DILHARA_2026_KEY
+-----END PGP PUBLIC KEY BLOCK-----</textarea>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="dev" style="--d:.21s">
+                <h3>Cyber FAQ <i class="fas fa-question"></i></h3>
+                <div class="faq-item" onclick="toggleFaq('f1')">
+                    <div class="faq-question"><span>What services do you offer?</span> <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer" id="f1">AI Development, Cyber Security Audits, Python Systems &amp; Visual Branding.</div>
+                </div>
+                <div class="faq-item" onclick="toggleFaq('f2')">
+                    <div class="faq-question"><span>How to initiate connection?</span> <i class="fas fa-chevron-down"></i></div>
+                    <div class="faq-answer" id="f2">Use official WhatsApp link or directly email via contact section.</div>
+                </div>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber" style="--d:.24s">
+                <h3>Attacks Mitigated <i class="fas fa-shield-virus"></i></h3>
+                <h2 style="color:var(--teal); font-family:var(--font-display); font-size:2.1rem; margin:4px 0;" id="attackCounter">1,492</h2>
+                <p style="font-size:0.7rem; color:var(--ink-dim);">Simulated Threats Nullified</p>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="design">
+                <h3>Social Radar <i class="fas fa-satellite-dish"></i></h3>
+                <p style="font-size:0.75rem; color:var(--ink-dim); margin-bottom: 4px;">Channel: Dinu Geek</p>
+                <p style="font-size:0.75rem; color:var(--ink-dim);">Brand Hub: DS Media Hub</p>
+            </div>
+
+            <div class="cyber-card-new reveal-scale" data-cat="cyber" style="--d:.03s">
+                <h3>Cyber Rating <i class="fas fa-award"></i></h3>
+                <p style="font-size:1.5rem; color:#10b981; font-family:var(--font-display); font-weight:800; margin: 4px 0;">AAA+ SECURE</p>
+                <p style="font-size:0.7rem; color:var(--ink-dim);">Verified Protocol Grade</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <div class="section-inner">
+        <h2 class="section-header reveal"><div class="eyebrow">LET'S BUILD SOMETHING</div>Initialize Connection</h2>
         <div class="connect-modern">
-            <div class="connect-card" data-aos="fade-up">
+            <div class="connect-card reveal">
                 <i class="fab fa-whatsapp"></i>
                 <h3>WHATSAPP</h3>
-                <p>+94 77 995 6510<br>+94 75 990 4894</p>
-                <div class="copy-trigger" onclick="copyText('+94 77 995 6510')">CLICK TO COPY WHATSAPP</div>
+                <p style="color:var(--ink-dim); font-family:var(--font-mono); margin-top:8px; font-size:.85rem;">+94 77 995 6510<br>+94 75 990 4894</p>
+                <div class="copy-trigger" onclick="copyText('+94 77 995 6510')">COPY NUMBER</div>
             </div>
-            <div class="connect-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="connect-card reveal" style="--d:.1s">
                 <i class="fab fa-youtube"></i>
                 <h3>YOUTUBE</h3>
-                <p>Explore Tech & AI on<br><strong>Dinu Geek Channel</strong></p>
+                <p style="color:var(--ink-dim); margin-top:8px;">Tech &amp; AI Tutorials on<br><strong style="color:#fff;">Dinu Geek Channel</strong></p>
             </div>
-            <div class="connect-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="connect-card reveal" style="--d:.2s">
                 <i class="fab fa-facebook-f"></i>
                 <h3>FACEBOOK</h3>
-                <p>Connect personally with<br><strong>Dinu Keraminiyge</strong></p>
+                <p style="color:var(--ink-dim); margin-top:8px;">Official Profile:<br><strong style="color:#fff;">Dinu Keraminiyge</strong></p>
             </div>
         </div>
 
-        <div class="centered-footer" data-aos="fade-up">
-            <p class="loc-text">Based in Sri Lanka | Available Worldwide</p>
-            <p class="copy-text">© 2026 DINUSH DILHARA</p>
-            <p class="brand-text">KDD STUDIO | DS MEDIA HUB</p>
+        <div class="centered-footer reveal">
+            <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary); letter-spacing: 3px; margin-bottom: 20px;">LOCATION: SRI LANKA (GMT +5:30) | AVAILABLE WORLDWIDE</p>
+            <p style="font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 4px; color: var(--ink-faint); margin-bottom: 6px;">© 2026 DINUSH DILHARA | ALL RIGHTS RESERVED</p>
+            <p style="font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 3px; color: #2b3040;">KDD STUDIO | DS MEDIA HUB</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-        function toggleMenu() { document.getElementById('mobileNav').classList.toggle('active'); }
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                alert("Copied to clipboard: " + text);
-            });
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<!-- Chatbot -->
+<div class="chat-widget-btn" onclick="toggleChat()"><i class="fas fa-terminal"></i></div>
+<div class="chat-window" id="chatWindow">
+    <div class="chat-header">
+        <span><i class="fas fa-brain" style="color:var(--primary);"></i> Dinush AI Assistant</span>
+        <i class="fas fa-times" style="cursor:pointer;" onclick="toggleChat()"></i>
+    </div>
+    <div class="chat-messages" id="chatMsgs">
+        <div class="msg bot">System ready. Ask me about Dinush's projects, cybersecurity tools, or contact info!</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="chatInp" placeholder="Enter message..." onkeydown="if(event.key==='Enter') sendMsg()">
+    </div>
+</div>
+
+<script type="module">
+    /* ================= HERO 3D NEURAL CORE (Three.js) ================= */
+    import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';
+
+    const heroCanvas = document.getElementById('heroCanvas');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (heroCanvas) {
+        const wrap = heroCanvas.parentElement;
+        const renderer = new THREE.WebGLRenderer({ canvas: heroCanvas, antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+        camera.position.set(0, 0, 7.5);
+
+        const rootStyles = getComputedStyle(document.documentElement);
+        function accentColor() {
+            return new THREE.Color(rootStyles.getPropertyValue('--primary').trim() || '#45e8c4');
         }
 
-        // --- Mouse Tracking Glow Effect ---
-        const glow = document.getElementById('glow');
-        document.addEventListener('mousemove', (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-            glow.style.setProperty('--x', x + 'px');
-            glow.style.setProperty('--y', y + 'px');
+        const group = new THREE.Group();
+        scene.add(group);
+
+        const icoGeo = new THREE.IcosahedronGeometry(2.15, 1);
+        const edges = new THREE.EdgesGeometry(icoGeo);
+        const lineMat = new THREE.LineBasicMaterial({ color: accentColor(), transparent: true, opacity: 0.55 });
+        const wireframe = new THREE.LineSegments(edges, lineMat);
+        group.add(wireframe);
+
+        const innerGeo = new THREE.IcosahedronGeometry(1.35, 0);
+        const innerEdges = new THREE.EdgesGeometry(innerGeo);
+        const innerMat = new THREE.LineBasicMaterial({ color: accentColor(), transparent: true, opacity: 0.28 });
+        const innerWire = new THREE.LineSegments(innerEdges, innerMat);
+        group.add(innerWire);
+
+        // Node particles scattered on a larger sphere
+        const nodeCount = 90;
+        const positions = new Float32Array(nodeCount * 3);
+        for (let i = 0; i < nodeCount; i++) {
+            const r = 3.1 + Math.random() * 0.6;
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos((Math.random() * 2) - 1);
+            positions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+            positions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+            positions[i * 3 + 2] = r * Math.cos(phi);
+        }
+        const ptsGeo = new THREE.BufferGeometry();
+        ptsGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const ptsMat = new THREE.PointsMaterial({ color: accentColor(), size: 0.045, transparent: true, opacity: 0.85, sizeAttenuation: true });
+        const points = new THREE.Points(ptsGeo, ptsMat);
+        group.add(points);
+
+        function resize() {
+            const w = wrap.clientWidth, h = wrap.clientHeight;
+            renderer.setSize(w, h, false);
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        let targetRotX = 0, targetRotY = 0;
+        window.addEventListener('mousemove', (e) => {
+            targetRotY = ((e.clientX / window.innerWidth) - 0.5) * 0.6;
+            targetRotX = ((e.clientY / window.innerHeight) - 0.5) * 0.6;
         });
 
-        // --- Typing Animation Script ---
-        const textToType = "AI ARCHITECT | TECH ENTREPRENEUR";
-        const typingElement = document.getElementById('typing-text');
-        const cursorElement = document.getElementById('cursor');
-        let charIndex = 0;
-
-        function type() {
-            if (charIndex < textToType.length) {
-                typingElement.textContent += textToType.charAt(charIndex);
-                charIndex++;
-                setTimeout(type, 100);
-            } else {
-                setTimeout(() => {
-                    cursorElement.style.display = 'none';
-                }, 2000);
+        let refreshColorTimer = 0;
+        function animate() {
+            requestAnimationFrame(animate);
+            if (!reduceMotion) {
+                group.rotation.y += 0.0022;
+                group.rotation.x += 0.0009;
+                points.rotation.y -= 0.0009;
             }
-        }
+            group.rotation.y += (targetRotY - 0) * 0.02;
+            group.rotation.x += (targetRotX - 0) * 0.02;
 
-        document.addEventListener('DOMContentLoaded', () => {
-            setTimeout(type, 1000);
+            refreshColorTimer++;
+            if (refreshColorTimer % 30 === 0) {
+                const c = accentColor();
+                lineMat.color = c; innerMat.color = c; ptsMat.color = c;
+            }
+            renderer.render(scene, camera);
+        }
+        animate();
+    }
+</script>
+
+<script>
+    /* ===================== Navigation ===================== */
+    function toggleMenu() { document.getElementById('mobileNav').classList.toggle('active'); }
+    const navEl = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+        navEl.classList.toggle('scrolled', window.scrollY > 40);
+        document.getElementById('scrollTopBtn').classList.toggle('show', window.scrollY > 500);
+    });
+
+    function copyText(text) { navigator.clipboard.writeText(text).then(() => { alert("Copied to Clipboard: " + text); }); }
+    function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    /* ===================== Scroll reveal (IntersectionObserver) ===================== */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
+            }
         });
-    </script>
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    /* ===================== Audio FX Synthesizer ===================== */
+    let soundEnabled = true;
+    let audioCtx;
+    function getAudioContext() {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        return audioCtx;
+    }
+    function playSound(freq, duration) {
+        if (!soundEnabled) return;
+        try {
+            const ctx = getAudioContext();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0.02, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+            osc.connect(gain); gain.connect(ctx.destination);
+            osc.start(); osc.stop(ctx.currentTime + duration);
+        } catch (e) {}
+    }
+    function toggleSound() {
+        soundEnabled = !soundEnabled;
+        document.getElementById('soundToggle').innerHTML = soundEnabled ? '<i class="fas fa-volume-up"></i>' : '<i class="fas fa-volume-mute"></i>';
+    }
+    document.querySelectorAll('a, button, .skill-item-new, .connect-card, .cyber-btn').forEach(el => {
+        el.addEventListener('mouseenter', () => playSound(700, 0.04));
+        el.addEventListener('click', () => playSound(1000, 0.08));
+    });
+
+    /* ===================== Accent theme cycle ===================== */
+    const themes = ['default', 'violet', 'amber', 'rose'];
+    let themeIdx = 0;
+    function cycleTheme() {
+        themeIdx = (themeIdx + 1) % themes.length;
+        if (themes[themeIdx] === 'default') document.documentElement.removeAttribute('data-theme');
+        else document.documentElement.setAttribute('data-theme', themes[themeIdx]);
+        playSound(900, 0.1);
+    }
+
+    /* ===================== Matrix rain (off by default — easter egg) ===================== */
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+    let matrixActive = false;
+    let matrixRunning = false;
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        if (pCanvas) { pCanvas.width = window.innerWidth; pCanvas.height = window.innerHeight; }
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const chars = '01ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%&*';
+    const fontSize = 14;
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops = Array(columns).fill(1);
+    let lastTime = 0;
+    const fps = 24;
+    const interval = 1000 / fps;
+
+    function drawMatrix(currentTime) {
+        if (!matrixActive) { matrixRunning = false; return; }
+        requestAnimationFrame(drawMatrix);
+        const delta = currentTime - lastTime;
+        if (delta < interval) return;
+        lastTime = currentTime - (delta % interval);
+        ctx.fillStyle = 'rgba(5, 6, 11, 0.12)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#45e8c4';
+        ctx.font = fontSize + 'px monospace';
+        for (let i = 0; i < drops.length; i++) {
+            const text = chars.charAt(Math.floor(Math.random() * chars.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+            drops[i]++;
+        }
+    }
+    function toggleMatrix() {
+        matrixActive = !matrixActive;
+        canvas.classList.toggle('active', matrixActive);
+        if (!matrixActive) { ctx.clearRect(0, 0, canvas.width, canvas.height); }
+        else if (!matrixRunning) { matrixRunning = true; requestAnimationFrame(drawMatrix); }
+    }
+
+    /* ===================== Ambient particle dust ===================== */
+    const pCanvas = document.getElementById('particlesCanvas');
+    const pCtx = pCanvas.getContext('2d');
+    const particlesArray = [];
+    const numParticles = window.innerWidth < 768 ? 22 : 40;
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * pCanvas.width;
+            this.y = Math.random() * pCanvas.height;
+            this.size = Math.random() * 1.6 + 0.6;
+            this.speedX = (Math.random() - 0.5) * 0.35;
+            this.speedY = (Math.random() - 0.5) * 0.35;
+        }
+        update() {
+            this.x += this.speedX; this.y += this.speedY;
+            if (this.x < 0 || this.x > pCanvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > pCanvas.height) this.speedY *= -1;
+        }
+        draw() {
+            pCtx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#45e8c4';
+            pCtx.beginPath();
+            pCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            pCtx.fill();
+        }
+    }
+    for (let i = 0; i < numParticles; i++) particlesArray.push(new Particle());
+    function animateParticles() {
+        pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+        particlesArray.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    /* ===================== Tilt cards ===================== */
+    document.querySelectorAll('.tilt, .cyber-card-new').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left, y = e.clientY - rect.top;
+            const cx = rect.width / 2, cy = rect.height / 2;
+            const rotateX = ((y - cy) / cy) * -6;
+            const rotateY = ((x - cx) / cx) * 6;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+
+    /* ===================== Cursor glow + custom magnetic cursor ===================== */
+    const glow = document.getElementById('glow');
+    const ring = document.getElementById('cursorRing');
+    const dot = document.getElementById('cursorDot');
+    let ticking = false;
+    document.addEventListener('mousemove', (e) => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                glow.style.setProperty('--x', e.clientX + 'px');
+                glow.style.setProperty('--y', e.clientY + 'px');
+                ring.style.left = e.clientX + 'px'; ring.style.top = e.clientY + 'px';
+                dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+    document.querySelectorAll('a, button, .cyber-btn, .skill-item-new, .connect-card, .icon-btn, .tilt, .cyber-card-new, .project-link, input, select, textarea').forEach(el => {
+        el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+        el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+    });
+
+    /* ===================== Click particle blast ===================== */
+    window.addEventListener('click', (e) => {
+        for (let i = 0; i < 7; i++) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed'; particle.style.pointerEvents = 'none';
+            particle.style.borderRadius = '50%'; particle.style.zIndex = 9999;
+            particle.style.background = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim();
+            particle.style.boxShadow = '0 0 8px currentColor';
+            particle.style.left = e.clientX + 'px'; particle.style.top = e.clientY + 'px';
+            const size = Math.random() * 5 + 3;
+            particle.style.width = size + 'px'; particle.style.height = size + 'px';
+            const angle = Math.random() * Math.PI * 2;
+            const distance = Math.random() * 44 + 18;
+            const dx = Math.cos(angle) * distance, dy = Math.sin(angle) * distance;
+            particle.animate([
+                { transform: 'translate(0,0) scale(1)', opacity: 1 },
+                { transform: `translate(${dx}px, ${dy}px) scale(0)`, opacity: 0 }
+            ], { duration: 550, easing: 'ease-out' });
+            document.body.appendChild(particle);
+            setTimeout(() => particle.remove(), 560);
+        }
+    });
+
+    /* ===================== Typing effect ===================== */
+    const textToType = "CYBER ARCHITECT | AI & PYTHON DEVELOPER";
+    const typingElement = document.getElementById('typing-text');
+    const cursorElement = document.getElementById('cursorType');
+    let charIndex = 0;
+    function type() {
+        if (charIndex < textToType.length) {
+            typingElement.textContent += textToType.charAt(charIndex);
+            charIndex++; setTimeout(type, 85);
+        } else { setTimeout(() => { cursorElement.style.display = 'none'; }, 2000); }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(type, 700);
+        updateClock();
+        setInterval(updateClock, 1000);
+        setInterval(() => {
+            document.getElementById('pingCounter').textContent = (Math.floor(Math.random() * 8) + 10) + 'ms';
+            let counter = document.getElementById('attackCounter');
+            if (counter) counter.textContent = (parseInt(counter.textContent.replace(/,/g, '')) + Math.floor(Math.random() * 2)).toLocaleString();
+        }, 3000);
+    });
+
+    function updateClock() {
+        const options = { timeZone: 'Asia/Colombo', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
+        document.getElementById('slClock').textContent = new Date().toLocaleTimeString('en-US', options);
+    }
+
+    /* ===================== Skill filter ===================== */
+    function filterSkills(category, e) {
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        if (e && e.target) e.target.classList.add('active');
+        document.querySelectorAll('.skill-item-new').forEach(item => {
+            item.style.display = (category === 'all' || item.dataset.category === category) ? 'block' : 'none';
+        });
+    }
+
+    /* ===================== Interactive demos ===================== */
+    function runAiDemo() {
+        const input = document.getElementById('demoAiInput').value || 'Status';
+        const out = document.getElementById('demoAiOutput');
+        out.textContent = '> Processing query via DiNuX Engine...';
+        setTimeout(() => { out.textContent = `> DiNuX AI Response: System optimal. Query "${input}" analyzed successfully.`; }, 600);
+    }
+
+    function runScanDemo() {
+        const target = document.getElementById('scanTarget').value;
+        const out = document.getElementById('scanOutput');
+        out.textContent = `> Initiating port audit on ${target}...`;
+        setTimeout(() => { out.textContent = `> Scan Complete! Open Ports: 80 (HTTP), 443 (HTTPS), 8501 (Streamlit AI). Zero Critical Threats.`; }, 1000);
+    }
+
+    function runEncryptDemo() {
+        const input = document.getElementById('encryptInput').value;
+        const out = document.getElementById('encryptOutput');
+        if (!input) { out.textContent = '> Please enter plain text first!'; return; }
+        out.textContent = `> Base64 Hash: ${btoa(input)}`;
+    }
+
+    /* ===================== Features logic ===================== */
+    function showCheatSyntax() {
+        const val = document.getElementById('cheatSelect').value;
+        const out = document.getElementById('cheatOutput');
+        if (val === 'nmap') out.textContent = '> nmap -sS -p- 127.0.0.1';
+        else if (val === 'sqlmap') out.textContent = '> sqlmap -u "target.com/page?id=1" --dbs';
+        else if (val === 'aircrack') out.textContent = '> aircrack-ng -w wordlist.txt capture.cap';
+    }
+
+    function convertHexBin() {
+        const val = document.getElementById('binInp').value;
+        const out = document.getElementById('binOut');
+        if (!val) { out.textContent = '> Hex output...'; return; }
+        let hex = '';
+        for (let i = 0; i < val.length; i++) hex += val.charCodeAt(i).toString(16) + ' ';
+        out.textContent = '> Hex: ' + hex.toUpperCase();
+    }
+
+    function checkQuiz(isCorrect) {
+        const ans = document.getElementById('quizAns');
+        if (isCorrect) { ans.style.color = '#10b981'; ans.textContent = '✔ Correct! Sum Of Products is standard in Boolean logic.'; }
+        else { ans.style.color = '#ef4444'; ans.textContent = '✖ Incorrect! SOP stands for Sum Of Products.'; }
+    }
+
+    function checkPassStrength() {
+        const pass = document.getElementById('passInp').value;
+        const score = document.getElementById('passScore');
+        if (pass.length === 0) score.textContent = 'Strength: None';
+        else if (pass.length < 6) { score.style.color = '#ef4444'; score.textContent = 'Strength: Weak (Too short)'; }
+        else if (pass.length < 10) { score.style.color = '#f59e0b'; score.textContent = 'Strength: Moderate'; }
+        else { score.style.color = '#10b981'; score.textContent = 'Strength: Cyber Secure (Strong)'; }
+    }
+
+    function searchGlossary() {
+        const q = document.getElementById('glossInp').value.toLowerCase();
+        const out = document.getElementById('glossOut');
+        if (q.includes('sop')) out.textContent = '> SOP: Sum of Products (Boolean Algebra/Logic Systems).';
+        else if (q.includes('sqli')) out.textContent = '> SQLi: SQL Injection vulnerability exploitation/defense.';
+        else if (q.includes('xss')) out.textContent = '> XSS: Cross-Site Scripting web vulnerability.';
+        else if (q.includes('ddos')) out.textContent = '> DDoS: Distributed Denial of Service cyber attack.';
+        else out.textContent = '> Enter acronym (SOP, SQLi, XSS, DDoS)...';
+    }
+
+    function toggleFaq(id) {
+        const el = document.getElementById(id);
+        el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
+    /* ===================== Modal ===================== */
+    function openModal(projectKey) {
+        const overlay = document.getElementById('modalOverlay');
+        const content = document.getElementById('modalContent');
+        if (projectKey === 'dinux') {
+            content.innerHTML = `<h2 style="color:var(--primary); font-family:var(--font-display); margin-bottom:15px;">DiNuX AI Assistant Architecture</h2>
+            <p style="color:#cbd5e1; line-height:1.6; margin-bottom:15px;">Advanced AI stream platform utilizing Python, Streamlit UI, and multi-threaded Groq API handlers for ultra-fast query execution.</p>
+            <p style="color:var(--primary); font-family: var(--font-mono);">Stack: Python, Streamlit, Groq API, Custom CSS</p>`;
+        } else {
+            content.innerHTML = `<h2 style="color:var(--primary); font-family:var(--font-display); margin-bottom:15px;">KDD Store Digital Ecosystem</h2>
+            <p style="color:#cbd5e1; line-height:1.6; margin-bottom:15px;">Cyber visual enterprise offering automated media workflows, high-end branding assets, and tailored web interfaces.</p>
+            <p style="color:var(--primary); font-family: var(--font-mono);">Focus: Cyber Branding, UI/UX, Automated Graphic Systems</p>`;
+        }
+        overlay.style.display = 'flex';
+    }
+    function closeModal() { document.getElementById('modalOverlay').style.display = 'none'; }
+
+    /* ===================== Hacker terminal ===================== */
+    function handleTerminal(e) {
+        if (e.key === 'Enter') {
+            const input = e.target.value.trim().toLowerCase();
+            const output = document.getElementById('termOutput');
+            let res = '';
+            if (input === 'help') res = 'Commands: about, skills, demos, projects, hack, scan, matrix, contact, clear';
+            else if (input === 'about') res = 'Dinush Dilhara | Cyber Architect, Student, & Entrepreneur based in Sri Lanka.';
+            else if (input === 'skills') res = 'Cyber Security, Python, Streamlit, SQL, AI Prompting, Digital Branding.';
+            else if (input === 'demos') res = 'Interactive tools available above: AI Simulator, Port Scanner, Encryptor.';
+            else if (input === 'projects') res = '1. DiNuX AI Assistant | 2. KDD Store & Studio Ecosystem';
+            else if (input === 'hack') res = 'ACCESS GRANTED. Overriding security protocols... [Simulated Cyber Node Active]';
+            else if (input === 'scan') res = 'Scanning local node... 0 Vulnerabilities found. System Secured.';
+            else if (input === 'matrix') { toggleMatrix(); res = 'Matrix Rain Canvas Toggled.'; }
+            else if (input === 'contact') res = 'WhatsApp: +94 77 995 6510 | Github: https://github.com/KDD01';
+            else if (input === 'clear') { output.innerHTML = ''; e.target.value = ''; return; }
+            else res = `Command not recognized: "${input}". Type "help" for valid commands.`;
+
+            output.innerHTML += `<p style="margin-top:6px;"><span style="color:var(--primary);">$ ${e.target.value}</span></p><p style="color:var(--ink-dim);">${res}</p>`;
+            output.scrollTop = output.scrollHeight;
+            e.target.value = '';
+        }
+    }
+
+    /* ===================== Chatbot ===================== */
+    function toggleChat() {
+        const win = document.getElementById('chatWindow');
+        win.style.display = win.style.display === 'flex' ? 'none' : 'flex';
+    }
+    function sendMsg() {
+        const inp = document.getElementById('chatInp');
+        const text = inp.value.trim();
+        if (!text) return;
+        const msgs = document.getElementById('chatMsgs');
+        msgs.innerHTML += `<div class="msg user">${text}</div>`;
+        inp.value = ''; msgs.scrollTop = msgs.scrollHeight;
+        setTimeout(() => {
+            let reply = "System online. You can connect with Dinush via WhatsApp for cyber or dev inquiries!";
+            const q = text.toLowerCase();
+            if (q.includes('hi') || q.includes('hello')) reply = "Greetings, agent. How can I assist you regarding Dinush's work?";
+            else if (q.includes('who') || q.includes('dinush')) reply = "Dinush Dilhara is a Sri Lankan Cyber Architect, Python Developer, and founder of KDD Studio.";
+            else if (q.includes('project') || q.includes('work')) reply = "Dinush created DiNuX AI and manages KDD Store & DS Media Hub.";
+            else if (q.includes('contact') || q.includes('whatsapp') || q.includes('phone')) reply = "Direct WhatsApp: +94 77 995 6510";
+            msgs.innerHTML += `<div class="msg bot">${reply}</div>`;
+            msgs.scrollTop = msgs.scrollHeight;
+        }, 500);
+    }
+</script>
 </body>
 </html>
